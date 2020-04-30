@@ -6,7 +6,10 @@ public class Mom : MonoBehaviour
 {
 
     public float horizontalSpeed;
-    public float verticalSpeed; 
+    public float verticalSpeed;
+
+    //flipFace
+    private bool facingRight = true;
 
 
     void Start()
@@ -30,8 +33,13 @@ public class Mom : MonoBehaviour
 
         if (Input.GetKey(KeyCode.S))
             transform.position += new Vector3(0, -verticalSpeed, 0) * Time.deltaTime;
+    }
 
-
-
+    void Flip()
+    {
+        facingRight = !facingRight;
+        Vector3 scaler = transform.localScale;
+        scaler.x *= -1;
+        transform.localScale = scaler;
     }
 }

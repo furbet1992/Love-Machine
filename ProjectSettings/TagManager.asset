@@ -10,6 +10,7 @@ TagManager:
   - Ground
   - player2
   - Goal
+  - destroy
   layers:
   - Default
   - TransparentFX

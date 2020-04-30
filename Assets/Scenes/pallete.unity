@@ -3096,6 +3096,8 @@ MonoBehaviour:
     m_Bits: 4096
   extraJumpsValue: 0
   deadCaption: {fileID: 1804087989}
+  cameraZoom: {fileID: 0}
+  viewDepth: 0
 --- !u!50 &382991001
 Rigidbody2D:
   serializedVersion: 4
@@ -3651,7 +3653,6 @@ GameObject:
   - component: {fileID: 745862065}
   - component: {fileID: 745862064}
   - component: {fileID: 745862067}
-  - component: {fileID: 745862066}
   - component: {fileID: 745862069}
   m_Layer: 0
   m_Name: Player_2
@@ -3726,27 +3727,6 @@ Transform:
   m_Father: {fileID: 864604114}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &745862066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 745862063}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1810c5d570f98d749bbd58a85aa67f93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 5
-  jumpingSpeed: 5
-  groundCheck: {fileID: 1666473047}
-  checkRadius: 0.5
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 0
-  extraJumpsValue: 2
-  deadCaption: {fileID: 0}
 --- !u!61 &745862067
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3845,7 +3825,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player1: {fileID: 382991000}
-  player2: {fileID: 745862066}
+  player2: {fileID: 745862069}
 --- !u!1001 &931581505
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ public class Switch : MonoBehaviour
 {
     // the gameobject of players o know which to switch it out from
     public Player player1;
-    public Player player2;
+    public Mom player2;
 
 
     // switch statement that has the case of when A button is pressed it switches

@@ -25,6 +25,12 @@ public class Player : MonoBehaviour
     //Dead caption
     public GameObject deadCaption;
 
+    //camera Zoom
+    public Camera cameraZoom;
+    [SerializeField]
+    private float viewDepth; 
+        
+
 
 
     void Start()
@@ -95,10 +101,15 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "spikes")
+        if (collision.gameObject.tag == "destroy")
         {
             deadCaption.gameObject.SetActive(true);
             StartCoroutine(Dead());
+        }
+
+        if (collision.gameObject.name == "CameraTriggerZoom")
+        {
+            cameraZoom.fieldOfView = viewDepth; 
         }
     }
 
@@ -109,6 +120,7 @@ public class Player : MonoBehaviour
             collision.gameObject.GetComponent<Collider2D>().isTrigger = true; 
         }
     }
+
 
 
     IEnumerator Dead()
