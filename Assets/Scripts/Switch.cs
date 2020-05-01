@@ -10,9 +10,11 @@ public class Switch : MonoBehaviour
 
 
     // switch statement that has the case of when A button is pressed it switches
-    private int switchPlayers = 1; 
+    private int switchPlayers = 1;
 
     // switch object int
+
+    public Camera cameraZoom;
 
 
 
@@ -39,6 +41,8 @@ public class Switch : MonoBehaviour
                     //maybe can tap into the Player screen and change the value or x,y,z to be vector.zero
                     player1.GetComponent<Player>().enabled = false;
                     player2.GetComponent<Mom>().enabled = true;
+                    player2.GetComponent<Mom>().spawnCount = 0;
+                    cameraZoom.GetComponent<Camera>().fieldOfView = 50; 
 
                     break;
 
@@ -49,7 +53,7 @@ public class Switch : MonoBehaviour
                     //player 2 script gets set active:      player 1 scripts set disable. 
                     player1.GetComponent<Player>().enabled = true;
                     player2.GetComponent<Mom>().enabled = false;
-
+                    cameraZoom.GetComponent<Camera>().fieldOfView = 33;
 
                     break; 
             }

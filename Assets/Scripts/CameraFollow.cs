@@ -15,7 +15,10 @@ public class CameraFollow : MonoBehaviour
     private float yMin;
 
 
-    private Transform target; 
+    private Transform target;
+
+    private bool activatePlayer1 = true;
+    private bool activatePlayer2 = true;
 
 
     void Start()
