@@ -97,11 +97,14 @@ public class Player : MonoBehaviour
 
 
 
-
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "destroy")
+        //if (collision.gameObject.tag == "player2")
+        //{
+        //    collision.gameObject.GetComponent<Collider2D>().isTrigger = true;
+        //}
+
+            if (collision.gameObject.tag == "destroy")
         {
             deadCaption.gameObject.SetActive(true);
             StartCoroutine(Dead());
@@ -112,15 +115,6 @@ public class Player : MonoBehaviour
             cameraZoom.fieldOfView = viewDepth; 
         }
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {     
-        if (collision.gameObject.tag =="player2")
-        {
-            collision.gameObject.GetComponent<Collider2D>().isTrigger = true; 
-        }
-    }
-
 
 
     IEnumerator Dead()

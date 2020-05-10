@@ -69,4 +69,22 @@ public class Mom : MonoBehaviour
         scaler.x *= -1;
         transform.localScale = scaler;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+
+    {
+        if (collision.gameObject.tag == "MomObstacle")
+        {
+            this.gameObject.GetComponent<Collider2D>().isTrigger = false;
+        }
+
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            this.gameObject.GetComponent<Collider2D>().isTrigger = true;
+        }
+    }
+
 }
