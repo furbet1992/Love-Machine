@@ -10,13 +10,13 @@ public class Soil : MonoBehaviour
 
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.gameObject.name == "soil")
+        if (collision.gameObject.tag == "player2" && Input.GetKey(KeyCode.E))
         {
             Debug.Log("soil activate");
             soilReplacement.SetActive(true);
-            Destroy(collision.gameObject); 
+            Destroy(this.gameObject); 
         }
     }
 

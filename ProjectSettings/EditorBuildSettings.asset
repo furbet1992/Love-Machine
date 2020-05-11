@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/pallete.unity
     guid: f61021d8f25c9584c9f9e12d16f7e0a5
+  - enabled: 1
+    path: Assets/Scenes/Asset Scenes/Level_2.unity
+    guid: bf7dc8ab9a28ab844b906aec5c7d9816
   m_configObjects: {}

@@ -42,7 +42,7 @@ public class Switch : MonoBehaviour
                     player1.GetComponent<Player>().enabled = false;
                     player2.GetComponent<Mom>().enabled = true;
                     player2.GetComponent<Mom>().spawnCount = 0;
-                    cameraZoom.GetComponent<Camera>().fieldOfView = 50; 
+                    //cameraZoom.GetComponent<Camera>().fieldOfView = 50; 
 
                     break;
 
@@ -53,7 +53,7 @@ public class Switch : MonoBehaviour
                     //player 2 script gets set active:      player 1 scripts set disable. 
                     player1.GetComponent<Player>().enabled = true;
                     player2.GetComponent<Mom>().enabled = false;
-                    cameraZoom.GetComponent<Camera>().fieldOfView = 33;
+                    //cameraZoom.GetComponent<Camera>().fieldOfView = 33;
 
                     break; 
             }

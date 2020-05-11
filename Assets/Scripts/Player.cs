@@ -110,9 +110,10 @@ public class Player : MonoBehaviour
             StartCoroutine(Dead());
         }
 
-        if (collision.gameObject.name == "CameraTriggerZoom")
+        if (collision.gameObject.name == "Layer Change")
         {
-            cameraZoom.fieldOfView = viewDepth; 
+            Debug.Log("player sprite layer have been changed"); 
+            this.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 1; 
         }
     }
 

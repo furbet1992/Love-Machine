@@ -8,11 +8,12 @@ public class Lever : MonoBehaviour
     public GameObject entrance_door;
     private int triggerAmount = 0; 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "player2" && triggerAmount==0)
+        if(collision.gameObject.tag == "player2" && Input.GetKey(KeyCode.E)  && triggerAmount ==0 )
         {
-            entrance_door.transform.position += new Vector3(0, 2);
+            Debug.Log("lever activate");
+            entrance_door.transform.position += new Vector3(0, 1.5f);
             triggerAmount = 1; 
         }
     }
