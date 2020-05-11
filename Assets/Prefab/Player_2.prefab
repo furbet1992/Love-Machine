@@ -146,8 +146,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
-  movement: {x: 0, y: 0}
+  jumpingSpeed: 5
+  groundCheck: {fileID: 0}
+  checkRadius: 0
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 0
+  extraJumpsValue: 0
   deadCaption: {fileID: 0}
+  cameraZoom: {fileID: 0}
+  viewDepth: 0
 --- !u!1001 &7875475557718256560
 PrefabInstance:
   m_ObjectHideFlags: 0
