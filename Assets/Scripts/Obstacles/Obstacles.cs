@@ -6,6 +6,9 @@ public class Obstacles : MonoBehaviour
 {
     private Rigidbody2D rb;
 
+    //tranform of obstacle location 
+    public Transform spawn;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>(); 
@@ -15,17 +18,24 @@ public class Obstacles : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            rb.constraints = RigidbodyConstraints2D.FreezePositionX; 
-            
-        }   
-    }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "player2")
+            rb.constraints = RigidbodyConstraints2D.FreezePositionX;          
+        }
+        if (collision.gameObject.tag == "player2" && Input.GetKey(KeyCode.E))
         {
-            rb.constraints = RigidbodyConstraints2D.None;
+            //rb.constraints = RigidbodyConstraints2D.None;
+            this.gameObject.transform.position = spawn.transform.position;
+        }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "player2" && Input.GetKey(KeyCode.E))
+        {
+            Debug.Log("interact"); 
+            //rb.constraints = RigidbodyConstraints2D.None;
+            this.gameObject.transform.position = spawn.transform.position;
 
         }
     }
+    
 }
 

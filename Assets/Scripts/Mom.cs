@@ -27,6 +27,8 @@ public class Mom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
         if (startSpawn && spawnCount==0)
         {
             
@@ -70,15 +72,15 @@ public class Mom : MonoBehaviour
         transform.localScale = scaler;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    //private void OnTriggerEnter2D(Collider2D collision)
 
-    {
-        if (collision.gameObject.tag == "MomObstacle")
-        {
-            this.gameObject.GetComponent<Collider2D>().isTrigger = false;
-        }
+    //{
+    //    if (collision.gameObject.tag == "MomObstacle")
+    //    {
+    //        this.gameObject.GetComponent<Collider2D>().isTrigger = false;
+    //    }
 
-    }
+    //}
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")

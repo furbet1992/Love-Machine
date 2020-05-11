@@ -5272,6 +5272,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalSpeed: 10
   verticalSpeed: 10
+  player: {fileID: 382990999}
+  spawnCount: 0
 --- !u!1 &769195752
 GameObject:
   m_ObjectHideFlags: 0
@@ -5457,6 +5459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player1: {fileID: 382991000}
   player2: {fileID: 745862069}
+  cameraZoom: {fileID: 0}
 --- !u!1 &869745371
 GameObject:
   m_ObjectHideFlags: 0
