@@ -18,7 +18,8 @@ public class Mom : MonoBehaviour
     public  int spawnCount = 0;
 
     //UI Speech Bubble
-    public GameObject speechBubble;
+    public GameObject saveBabyCaption;
+    public GameObject switchPLayerBubbleCaption; 
 
     //lever light 
     public GameObject lightOn; 
@@ -27,7 +28,7 @@ public class Mom : MonoBehaviour
     void Start()
     {
         this.gameObject.transform.position = player.transform.position + new Vector3(0f,2f,0f);
-        StartCoroutine(toggleSpeechBubble());
+        StartCoroutine(toggleSpeechBubble());      
     }
 
     // Update is called once per frame
@@ -82,8 +83,18 @@ public class Mom : MonoBehaviour
     IEnumerator toggleSpeechBubble()
     {
         yield return new WaitForSeconds(3);
-        speechBubble.SetActive(false);
-        lightOn.SetActive(true); 
+        saveBabyCaption.SetActive(false);
+        switchPLayerBubbleCaption.SetActive(true);
+
+        StartCoroutine(switchLight()); 
+      
+    }
+
+    IEnumerator switchLight()
+    {
+        yield return new WaitForSeconds(2);
+        switchPLayerBubbleCaption.SetActive(false);
+        lightOn.SetActive(true);
     }
 
     //private void OnTriggerEnter2D(Collider2D collision)

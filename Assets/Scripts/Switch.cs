@@ -16,12 +16,21 @@ public class Switch : MonoBehaviour
 
     public Camera cameraZoom;
 
+    //change sprite
+    public SpriteRenderer mom; 
+    public Sprite momHuman;
+    public Sprite momGhost; 
+
 
 
     void Start()
     {
         player1.GetComponent<Player>().enabled = true;
-        player2.GetComponent<Mom>().enabled = false; 
+        player2.GetComponent<Mom>().enabled = false;
+
+        //mom.GetComponent<SpriteRenderer>();
+        //momHuman = Resources.Load<Sprite>("mother(living)");
+        //momGhost = Resources.Load<Sprite>("mother(ghost)");
 
     }
 
@@ -42,6 +51,8 @@ public class Switch : MonoBehaviour
                     player1.GetComponent<Player>().enabled = false;
                     player2.GetComponent<Mom>().enabled = true;
                     player2.GetComponent<Mom>().spawnCount = 0;
+
+                
                     //cameraZoom.GetComponent<Camera>().fieldOfView = 50; 
 
                     break;
@@ -53,6 +64,7 @@ public class Switch : MonoBehaviour
                     //player 2 script gets set active:      player 1 scripts set disable. 
                     player1.GetComponent<Player>().enabled = true;
                     player2.GetComponent<Mom>().enabled = false;
+
                     //cameraZoom.GetComponent<Camera>().fieldOfView = 33;
 
                     break; 
