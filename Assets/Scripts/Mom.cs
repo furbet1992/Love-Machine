@@ -15,13 +15,19 @@ public class Mom : MonoBehaviour
     //player tranform
     public GameObject player;
     private bool startSpawn = true;
-    public  int spawnCount = 0; 
+    public  int spawnCount = 0;
 
+    //UI Speech Bubble
+    public GameObject speechBubble;
+
+    //lever light 
+    public GameObject lightOn; 
 
 
     void Start()
     {
-        this.gameObject.transform.position = player.transform.position + new Vector3(0f,2f,0f); 
+        this.gameObject.transform.position = player.transform.position + new Vector3(0f,2f,0f);
+        StartCoroutine(toggleSpeechBubble());
     }
 
     // Update is called once per frame
@@ -70,6 +76,14 @@ public class Mom : MonoBehaviour
         Vector3 scaler = transform.localScale;
         scaler.x *= -1;
         transform.localScale = scaler;
+    }
+
+
+    IEnumerator toggleSpeechBubble()
+    {
+        yield return new WaitForSeconds(3);
+        speechBubble.SetActive(false);
+        lightOn.SetActive(true); 
     }
 
     //private void OnTriggerEnter2D(Collider2D collision)

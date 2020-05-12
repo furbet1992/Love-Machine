@@ -28,7 +28,10 @@ public class Player : MonoBehaviour
     //camera Zoom
     public Camera cameraZoom;
     [SerializeField]
-    private float viewDepth; 
+    private float viewDepth;
+
+    //mom
+    public GameObject mom; 
         
 
 
@@ -42,6 +45,7 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround); 
+        
     }
 
 
@@ -120,7 +124,7 @@ public class Player : MonoBehaviour
 
     IEnumerator Dead()
     { 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(6);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
