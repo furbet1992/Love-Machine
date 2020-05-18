@@ -31,7 +31,12 @@ public class Player : MonoBehaviour
     private float viewDepth;
 
     //mom
-    public GameObject mom; 
+    public GameObject mom;
+
+    //speech bubble
+    bool captionToggle;
+    public GameObject speechBubble;
+    public GameObject appleSpeechBubble; 
         
 
 
@@ -62,13 +67,13 @@ public class Player : MonoBehaviour
         handleMovement(horizontal);
 
         //flipping players face
-        if(facingRight == false && horizontal > 0)
+        if (facingRight == false && horizontal > 0)
         {
             Flip();
         }
         else if (facingRight == true && horizontal < 0)
         {
-            Flip(); 
+            Flip();
         }
 
 
@@ -80,9 +85,36 @@ public class Player : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.W) && extraJumps == 0 && isGrounded == true)
         {
-            rb.velocity = Vector2.up * jumpingSpeed; 
+            rb.velocity = Vector2.up * jumpingSpeed;
         }
 
+        //speech bubble 
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            captionToggle = !captionToggle;
+            if (captionToggle)
+            {
+                speechBubble.SetActive(true);
+            }
+            else
+            {
+                speechBubble.SetActive(false);
+            }         
+        }
+
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            captionToggle = !captionToggle;
+            if (captionToggle)
+            {
+                appleSpeechBubble.SetActive(true);
+            }
+            else
+            {
+                appleSpeechBubble.SetActive(false);
+            }
+        }
     }
 
     private void handleMovement(float horizontal)
@@ -108,7 +140,7 @@ public class Player : MonoBehaviour
         //    collision.gameObject.GetComponent<Collider2D>().isTrigger = true;
         //}
 
-            if (collision.gameObject.tag == "destroy")
+        if (collision.gameObject.tag == "destroy")
         {
             deadCaption.gameObject.SetActive(true);
             StartCoroutine(Dead());
@@ -116,8 +148,17 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.name == "Layer Change")
         {
-            Debug.Log("player sprite layer have been changed"); 
-            this.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 1; 
+            Debug.Log("player sprite layer have been changed");
+            this.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 1;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == " apple")
+        {
+            Debug.Log("apple_hit");
+            Destroy(collision.gameObject);
         }
     }
 

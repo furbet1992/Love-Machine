@@ -22,7 +22,10 @@ public class Mom : MonoBehaviour
     public GameObject switchPLayerBubbleCaption; 
 
     //lever light 
-    public GameObject lightOn; 
+    public GameObject lightOn;
+
+    //apple
+    public GameObject apple; 
 
 
     void Start()
@@ -97,15 +100,15 @@ public class Mom : MonoBehaviour
         lightOn.SetActive(true);
     }
 
-    //private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
 
-    //{
-    //    if (collision.gameObject.tag == "MomObstacle")
-    //    {
-    //        this.gameObject.GetComponent<Collider2D>().isTrigger = false;
-    //    }
+    {
+        if (collision.gameObject.name == "Tree_Trigger_box")
+        {
+            apple.GetComponent<Rigidbody2D>().gravityScale = 1; 
+        }
 
-    //}
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
